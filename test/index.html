@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <title>Index</title>
+    
+    <script src="../lib/mocha.js" type="text/javascript" charset="utf-8"></script>
+    <script>mocha.setup('bdd')</script>
+    <script src="../lib/chai.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      var expect = chai.expect;
+      function assert(expr, msg) {
+        if (!expr) throw new Error(msg || 'failed');
+      }
+    </script>
+
+
+    <script src="spec/test1.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <script type="text/javascript" charset="utf-8">
+      onload = function(){
+        mocha.checkLeaks();
+        mocha.globals(['foo']);
+        var runner = mocha.run();
+
+        // runner.on('test end', function(test){
+        //   console.log(test.fullTitle());
+        // });
+      };
+    </script>
+
+</head>
+<body>
+    <div id="mocha"></div>
+</body>
+</html>
